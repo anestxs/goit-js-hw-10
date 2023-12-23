@@ -56,7 +56,7 @@ button.addEventListener("click", () => {
         return String(value).padStart(2, '0');
     }
 
-    setInterval(() => { 
+    const interval = setInterval(() => { 
         let difference = selectedTime - new Date().getTime();
         let gotTime = convertMs(difference);
         
@@ -68,7 +68,7 @@ button.addEventListener("click", () => {
         } else { 
             button.removeAttribute("disabled");
             input.removeAttribute("disabled");
-            clearInterval(timerInterval);
+            clearInterval(interval);
         }
     }, 1000);
 })
